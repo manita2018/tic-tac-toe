@@ -40,7 +40,6 @@ def get_current_player():
 
 
 def get_coordinates():
-
     while True:  # first while loop code
         i = raw_input('which column?\n')
         try:
@@ -64,7 +63,6 @@ def get_coordinates():
             print ('Please enter an integer between 0 and 2.\n')
             continue
         break
-
     return [x_coord, y_coord]
 
 
@@ -82,10 +80,10 @@ def did_win(player):
 
 
 def is_board_full():
-    board_is_full = False
+    board_is_full = True
     for row in BOARD:
-        if row[0] != '-' and row[1] != '-' and row[2] != '-':
-            board_is_full = True
+        if row[0] == '-' or row[1] == '-' or row[2] == '-':
+            board_is_full = False
 
     return board_is_full
 
