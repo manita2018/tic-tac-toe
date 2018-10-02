@@ -40,8 +40,31 @@ def get_current_player():
 
 
 def get_coordinates():
-    x_coord = int(raw_input('which column?\n'))
-    y_coord = int(raw_input('which row?\n'))
+
+    while True:  # first while loop code
+        i = raw_input('which column?\n')
+        try:
+            x_coord = int(i)
+        except ValueError:
+            print('\nYou did not enter a valid integer. Please enter a valid integer.')
+            continue
+        if x_coord > 2:
+            print ('Please enter an integer between 0 and 2.\n')
+            continue
+        break
+
+    while True:  # first while loop code
+        i = raw_input('which row?\n')
+        try:
+            y_coord = int(i)
+        except ValueError:
+            print('\nYou did not enter a valid integer. Please enter a valid integer.')
+            continue
+        if y_coord > 2:
+            print ('Please enter an integer between 0 and 2.\n')
+            continue
+        break
+
     return [x_coord, y_coord]
 
 
